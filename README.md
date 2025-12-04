@@ -1,28 +1,44 @@
-📘 LeetCode – Problem Solutions
+# LeetCode
 
-This repository contains solutions to various LeetCode problems.
-It serves as a central place where you can browse and access coding solutions for different problems.
+This repository contains solutions to various problems from **LeetCode**.  
+It is used to keep all solved problems in one place in a clean and organized way.
 
-🚀 What’s Inside
+---
 
-A collection of solved LeetCode problems — all neatly organised.
+## 🧠 About
 
-Solutions are implemented in code (mostly C++ in this repo, as visible from repository stats).
+- Solutions of LeetCode problems solved by me  
+- Focus on improving **Data Structures and Algorithms (DSA)**  
+- Code is written in a simple and readable way  
+- Solutions may be in different programming languages
 
-Each solution is named according to the problem title or number for easy navigation.
+---
 
-📂 How It’s Structured
+## 📂 Repository Structure
 
-Every file/folder corresponds to a specific LeetCode problem.
+- Each **folder name** is the **exact LeetCode question number and question name**, same as it appears on LeetCode  
+  - Example: `1. Two Sum`, `121. Best Time to Buy and Sell Stock`  
+- Inside each folder, you will find the solution code for that specific problem  
+- Some solutions may include comments explaining the logic and approach
 
-Solution code is included for each problem — this makes it easy to read, test or reference.
+---
 
-🎯 Purpose
+## 🎯 Purpose
 
-To create a well-organized, publicly available archive of my LeetCode problem solutions.
+- To maintain a collection of LeetCode problem solutions  
+- To regularly practice coding and problem solving  
+- To use this repository as a reference for revision in the future
 
-To help others see different problem-solving approaches (or use as reference).
+---
 
-🤝 Feedback / Improvements
+## 🤝 Suggestions
 
-Feel free to check out the code and suggest improvements or alternative solutions if you like.
+If you have any suggestions or better approaches for any problem,  
+you are welcome to share your ideas or compare solutions.
+
+---
+
+## 🙏 Thank You
+
+Thank you for visiting this repository!  
+Your interest and support are truly appreciated.
