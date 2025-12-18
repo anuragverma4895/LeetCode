@@ -1,13 +1,25 @@
 class Solution {
 public:
-    void recur(int index, vector<int>&nums,vector<int>temp,vector<vector<int>>&ans){
+    // void recur(int index, vector<int>&nums,vector<int>temp,vector<vector<int>>&ans){
+    //     if(index>=nums.size()){
+    //         ans.push_back(temp);
+    //         return;
+    //     }
+    //     vector<int>temp2=temp;
+    //     temp2.push_back(nums[index]);
+    //     recur(index+1,nums,temp2,ans);
+    //     recur(index+1,nums,temp,ans);
+    //     return;
+    // }
+
+    void recur(int index, vector<int>&nums,vector<int>&temp,vector<vector<int>>&ans){
         if(index>=nums.size()){
             ans.push_back(temp);
             return;
         }
-        vector<int>temp2=temp;
-        temp2.push_back(nums[index]);
-        recur(index+1,nums,temp2,ans);
+        temp.push_back(nums[index]);
+        recur(index+1,nums,temp,ans);
+        temp.pop_back();
         recur(index+1,nums,temp,ans);
         return;
     }
