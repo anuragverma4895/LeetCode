@@ -20,6 +20,7 @@ public:
     //     backtrack(0, target, candidates, cur, res);
     //     return res;
 
+    // other method
     void recur(int index, vector<int>&nums, int target, vector<int>&temp, vector<vector<int>>&ans){
         if(target==0){
             ans.push_back(temp);
@@ -28,15 +29,13 @@ public:
         if(index>=nums.size()){
             return;
         }
-        for(int times=0;times*nums[index]<=target;times++){
-            for(int k=0;k<times;k++){
-                temp.push_back(nums[index]);
-            }
-            recur(index+1,nums,target-nums[index]*times,temp,ans);
-            for(int k=0;k<times;k++){
-                temp.pop_back();
-            }
-        }
+        // 
+        // other method
+        if(target<0) return;
+        temp.push_back(nums[index]);
+        recur(index,nums,target-nums[index],temp,ans);
+        temp.pop_back();
+        recur(index+1, nums,target,temp,ans);
     }
 
     vector<vector<int>>combinationSum(vector<int>&nums, int target){
