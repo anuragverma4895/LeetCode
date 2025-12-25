@@ -34,6 +34,7 @@ public:
         }
         return ans;
     }
+    // TC=O(n) and SC=O(N)
     int largestRectangleArea(vector<int>& heights) {
         int n=heights.size();
         vector<int>next_smaller=nextSmaller(heights);
