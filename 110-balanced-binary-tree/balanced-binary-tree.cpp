@@ -25,7 +25,7 @@ public:
     // }
 
 
-    // other method
+    // other method O(n);
     int height(TreeNode* root){
         if(root==NULL) return 0;
         int left=height(root->left);
