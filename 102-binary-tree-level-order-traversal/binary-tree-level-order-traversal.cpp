@@ -22,9 +22,9 @@ public:
             for(int i=0;i<sz;i++){
                 TreeNode* curr=q.front();
                 q.pop();
+                arr.push_back(curr->val);
                 if(curr->left!=NULL) q.push(curr->left);
                 if(curr->right!=NULL) q.push(curr->right);
-                arr.push_back(curr->val);
             }
             ans.push_back(arr);
         }
