@@ -15,7 +15,6 @@ public:
         int level=0;
         int finallev=0;
         int result=INT_MIN;
-        // int sum=0;
         queue<TreeNode*>q;
         q.push(root);
         while(q.size()){
