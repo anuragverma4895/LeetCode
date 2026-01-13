@@ -1,5 +1,8 @@
 class Solution {
 public:
+
+    // this code is calculating the distance
+    // important
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int n=mat.size();
         int m=mat[0].size();
