@@ -1,10 +1,11 @@
 class Solution {
 public:
 
+    // use this type of dfs when grid is given(important)
     void dfs(vector<vector<char>>&board, int cx, int cy, vector<vector<int>>&vis){
         vis[cx][cy]=1;
-        int dx[]={1,-1,0,0};
-        int dy[]={0,0,-1,1};
+        int dx[]={1,-1,0,0}; //checking up down left right
+        int dy[]={0,0,-1,1}; //checking up down left right
         int n=board.size();
         int m=board[0].size();
         for(int k=0;k<4;k++){
