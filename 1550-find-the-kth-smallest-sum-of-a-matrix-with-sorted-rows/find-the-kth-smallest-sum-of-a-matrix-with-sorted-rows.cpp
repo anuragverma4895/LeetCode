@@ -13,6 +13,7 @@ public:
             }
             sort(curr.begin(),curr.end());
             temp.clear();
+            
             int max_size=min(k+1,(int)curr.size());
             for(int j=0;j<max_size;j++){
                 temp.push_back(curr[j]);
