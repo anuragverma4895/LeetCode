@@ -23,7 +23,7 @@ public:
                     if (j > 0 && dp[i][j-1][k] != -1e18)
                         dp[i][j][k] = max(dp[i][j][k], dp[i][j-1][k] + val);
 
-                    if (val < 0 && k > 0) {
+                    if (val <= 0 && k > 0) {
                         if (i > 0 && dp[i-1][j][k-1] != -1e18)
                             dp[i][j][k] = max(dp[i][j][k], dp[i-1][j][k-1]);
 
