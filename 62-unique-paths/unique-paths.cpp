@@ -1,15 +1,21 @@
 class Solution {
 public:
-    int uniquePaths(int m, int n) {
-        int N = m + n - 2;
-        int r = min(m - 1, n - 1);
-
-        long long ans = 1;
-
-        for(int i = 1; i <= r; i++){
-            ans = ans * (N - r + i) / i;
+    int recur(int i, int j, int n, int m,vector<vector<int>>&dp) {
+        if (i < 0 || j < 0 || i >= n || j >= m) {
+            return 0;
         }
-
-        return ans;
+        if (i == n - 1 or j == m - 1) {
+            return 1;
+        }
+        if (dp[i][j] != -1) {
+            return dp[i][j];
+        }
+        int left = recur(i + 1, j, n, m,dp);
+        int right = recur(i, j + 1, n, m,dp);
+        return dp[i][j] = left + right;
+    }
+    int uniquePaths(int n, int m) {
+        vector<vector<int>> dp(n, vector<int>(m, -1));
+        return recur(0, 0, n, m,dp);
     }
 };
