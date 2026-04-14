@@ -24,7 +24,8 @@ public:
 
     // tabulation
     int uniquePaths(int n, int m){
-        vector<vector<int>> dp(n, vector<int>(m, -1));
+        // vector<vector<int>> dp(n, vector<int>(m, -1));
+        vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
         dp[n-1][m-1]=1;
         for(int i=n-1;i>=0;i--){
             for(int j=m-1;j>=0;j--){
@@ -32,13 +33,11 @@ public:
                     continue;
                 }
                 int down=0;
-                if(i+1<n){
+                // if(i+1<n)
                     down=dp[i+1][j];
-                }
                 int right=0;
-                if(j+1<m){
+                // if(j+1<m)
                     right=dp[i][j+1];
-                }
                 dp[i][j]=down+right;
             }
         }
