@@ -78,6 +78,6 @@ public:
                 r = mid - 1;
         }
 
-        return r;
+        return l;
     }
 };
