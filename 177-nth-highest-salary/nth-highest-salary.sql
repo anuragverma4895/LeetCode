@@ -8,9 +8,11 @@ BEGIN
     --       ORDER BY salary DESC
     --       LIMIT 1 OFFSET N
 
+        -- )
+
+        
             select distinct salary from employee
             order by salary desc
             limit n,1
-        -- )
     );
 END
