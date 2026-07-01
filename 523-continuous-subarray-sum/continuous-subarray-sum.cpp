@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
+        // not working
         // int n=nums.size();
         // int sum=0;
         // int count=0;
