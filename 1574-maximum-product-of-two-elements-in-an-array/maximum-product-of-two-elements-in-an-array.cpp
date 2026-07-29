@@ -13,9 +13,25 @@ public:
         // }
         // return ans;
 
-        // O(nlogn)
+
+        // // O(nlogn)
+        // int n=nums.size();
+        // sort(nums.begin(),nums.end(),greater<int>());
+        // return (nums[0]-1)*(nums[1]-1);
+
         int n=nums.size();
-        sort(nums.begin(),nums.end(),greater<int>());
-        return (nums[0]-1)*(nums[1]-1);
+        int first=0,second=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]>first){
+                second=first;
+                first=nums[i];
+            }
+            else if(nums[i]>second){
+                second=nums[i];
+            }
+        }
+        cout<<first<<endl;
+        cout<<second<<endl;
+        return (first-1)*(second-1);
     }
 };
