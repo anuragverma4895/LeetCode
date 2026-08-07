@@ -11,7 +11,7 @@ class Solution:
         # return True
 
         # other method
-        return Counter(s)==Counter(t)
+        # return Counter(s)==Counter(t)
 
         # other method
         if len(s)!=len(t):
@@ -23,4 +23,7 @@ class Solution:
             if ch not in freq:
                 return False
             freq[ch]-=1
-        
+        for values in freq.values():
+            if values>0:
+                return False
+        return True
