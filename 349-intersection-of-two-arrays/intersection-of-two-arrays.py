@@ -19,8 +19,11 @@ class Solution:
         # return ans
 
 
-        
-        ans1=set(nums1)
-        ans2=set(nums2)
-        ans=list(ans1.intersection(ans2))
-        return ans
+
+        # ans1=set(nums1)
+        # ans2=set(nums2)
+        # ans=list(ans1.intersection(ans2))
+        # return ans
+
+
+        return list(set(nums1) & set(nums2))
