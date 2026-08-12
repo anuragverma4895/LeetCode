@@ -17,16 +17,30 @@ class Solution:
         #         count=1
         # return val
 
-        # other method
-        n=len(nums)
-        freq={}
+        # # other method
+        # n=len(nums)
+        # freq={}
+        # for x in nums:
+        #     freq[x]=freq.get(x,0)+1
+        # ans=0
+        # maxval=0
+        # for x in freq:
+        #     if freq[x] > maxval:
+        #         maxval = freq[x]
+        #         ans = x
+        # return ans
+
+
+        winner = -1
+        count = 0
+
         for x in nums:
-            freq[x]=freq.get(x,0)+1
-            print(x,end=" ")
-        ans=0
-        maxval=0
-        for x in freq:
-            if freq[x] > maxval:
-                maxval = freq[x]
-                ans = x
-        return ans
+            if count == 0:
+                count = 1
+                winner = x
+            elif x == winner:
+                count += 1
+            else:
+                count -= 1
+
+        return winner
