@@ -20,9 +20,14 @@ class Solution:
         for ch in s:
             freq[ch]=freq.get(ch,0)+1
         for ch in t:
-            if ch not in freq:
-                return False
-            freq[ch]-=1
+            # if ch not in freq:
+            #     return False
+            # freq[ch]-=1
+
+            # or
+
+            freq[ch]=freq.get(ch,0)-1
+
         for values in freq.values():
             if values>0:
                 return False
