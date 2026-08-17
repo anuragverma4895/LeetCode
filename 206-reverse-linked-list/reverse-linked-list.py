@@ -14,7 +14,7 @@ class Solution:
         #     curr=temp
         # return prev
 
-        if head is None or head.next is None:
+        if head == None or head.next == None:
             return head
         newList=self.reverseList(head.next)
         head.next.next=head
