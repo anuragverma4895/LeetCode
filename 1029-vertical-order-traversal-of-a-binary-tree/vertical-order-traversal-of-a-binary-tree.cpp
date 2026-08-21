@@ -57,50 +57,89 @@
 //     }
 // };
 
+
+// // revision
+// class Solution {
+// public:
+//     vector<vector<int>> verticalTraversal(TreeNode* root) {
+//         if (root == NULL)
+//             return {};
+
+//         map<int, map<int, multiset<int>>> nodes;
+
+//         queue<pair<TreeNode*, pair<int, int>>> q;
+
+//         q.push({root, {0, 0}});
+
+//         while (!q.empty()) {
+//             auto p = q.front();
+//             q.pop();
+
+//             TreeNode* node = p.first;
+//             int x = p.second.first;
+//             int y = p.second.second;
+
+//             nodes[x][y].insert(node->val);
+
+//             if (node->left) {
+//                 q.push({node->left, {x - 1, y + 1}});
+//             }
+
+//             if (node->right) {
+//                 q.push({node->right, {x + 1, y + 1}});
+//             }
+//         }
+
+//         vector<vector<int>> ans;
+
+//         for (auto x : nodes) {
+//             vector<int> temp;
+//             for (auto y : x.second) {
+//                 for (auto z : y.second) {
+//                     temp.push_back(z);
+//                 }
+//             }
+
+//             ans.push_back(temp);
+//         }
+
+//         return ans;
+//     }
+// };
+
+
+// revision
 class Solution {
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
-        if (root == NULL)
-            return {};
-
-        map<int, map<int, multiset<int>>> nodes;
-
-        queue<pair<TreeNode*, pair<int, int>>> q;
-
-        q.push({root, {0, 0}});
-
-        while (!q.empty()) {
-            auto p = q.front();
-            q.pop();
-
-            TreeNode* node = p.first;
-            int x = p.second.first;
-            int y = p.second.second;
-
-            nodes[x][y].insert(node->val);
-
-            if (node->left) {
-                q.push({node->left, {x - 1, y + 1}});
-            }
-
-            if (node->right) {
-                q.push({node->right, {x + 1, y + 1}});
+        vector<vector<int>>ans;
+        if(root==NULL) return ans;
+        map<int,map<int,multiset<int>>>nodes;
+        queue<pair<TreeNode*,pair<int,int>>>q;
+        q.push({root,{0,0}});
+        while(q.size()){
+            int sz=q.size();
+            for(int i=0;i<sz;i++){
+                auto p=q.front();
+                TreeNode* curr=p.first;
+                q.pop();
+                int x=p.second.first;
+                int y=p.second.second;
+                nodes[x][y].insert(curr->val);
+                if(curr->left) q.push({curr->left,{x-1,y+1}});
+                if(curr->right) q.push({curr->right,{x+1,y+1}});
             }
         }
-
-        vector<vector<int>> ans;
-
-        for (auto x : nodes) {
-            vector<int> temp;
-            for (auto y : x.second) {
-                for (auto z : y.second) {
+        for(auto x:nodes){
+            vector<int>temp;
+            for(auto y:x.second){
+                for(auto z:y.second){
                     temp.push_back(z);
                 }
             }
-
             ans.push_back(temp);
         }
-
         return ans;
+
     }
 };
