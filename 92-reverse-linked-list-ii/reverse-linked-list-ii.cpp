@@ -68,7 +68,6 @@ public:
             temp->next = prev->next;
             prev->next = temp;
         }
-
         return dummy->next;
     }
 };
