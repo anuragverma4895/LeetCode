@@ -4,7 +4,7 @@ public:
         int n = s.size(), m = t.size();
         vector<vector<unsigned long long>> dp(n + 1, vector<unsigned long long>(m + 1));
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i <= n; i++)
             dp[i][0] = 1;
 
         for (int i = 1; i <= n; i++) {
