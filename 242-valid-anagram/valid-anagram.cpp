@@ -10,11 +10,12 @@ public:
             if(mp.find(t[i])==mp.end()){
                 return false;
             }
+            if(mp[t[i]] == 0) return false;
             mp[t[i]]--;
         }
-        for(auto it:mp){
-            if(it.second!=0) return false;
-        }
+        // for(auto it:mp){
+        //     if(it.second!=0) return false;
+        // }
         return true;
     }
 };
