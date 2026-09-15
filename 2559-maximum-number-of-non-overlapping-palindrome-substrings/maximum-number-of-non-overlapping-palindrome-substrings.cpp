@@ -13,7 +13,6 @@ public:
         vector<int> dp(n + 1, 0);
         for(int i = 1; i <= n; i++) {
             dp[i] = dp[i - 1];
-
             for(int j = 0; j < i; j++) {
                 if(i - j >= k && isPal[j][i - 1]) {
                     dp[i] = max(dp[i], dp[j] + 1);
