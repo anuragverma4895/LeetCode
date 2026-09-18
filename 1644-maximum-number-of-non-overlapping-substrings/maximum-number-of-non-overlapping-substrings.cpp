@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<string> maxNumOfSubstrings(string s) {
         vector<int> first(26, -1), last(26, -1);
-
         for(int i = 0; i < s.size(); i++) {
             int x = s[i] - 'a';
             if(first[x] == -1) first[x] = i;
