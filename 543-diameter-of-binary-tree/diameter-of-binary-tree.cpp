@@ -29,19 +29,38 @@
 
 
 
+// class Solution {
+// public:
+//     int height(TreeNode* root,int &ans){
+//         if(root==NULL) return 0;
+//         int l=height(root->left,ans);
+//         int r=height(root->right,ans);
+//         ans=max(l+r,ans);
+//         return 1+max(l,r);
+
+//     }
+     
+//     int diameterOfBinaryTree(TreeNode* root) {
+//         if(root==NULL) return 0;
+//         int ans=0;
+//         height(root,ans);
+//         return ans;
+//     }
+// };
+
+
 class Solution {
 public:
-    int height(TreeNode* root,int &ans){
+
+    int height(TreeNode* root, int &ans){
         if(root==NULL) return 0;
         int l=height(root->left,ans);
         int r=height(root->right,ans);
-        ans=max(l+r,ans);
+        ans=max(ans,l+r);
         return 1+max(l,r);
-
     }
      
     int diameterOfBinaryTree(TreeNode* root) {
-        if(root==NULL) return 0;
         int ans=0;
         height(root,ans);
         return ans;
