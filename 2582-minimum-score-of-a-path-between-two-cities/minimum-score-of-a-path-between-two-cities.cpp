@@ -3,7 +3,7 @@ public:
     int minScore(int n, vector<vector<int>>& roads) {
         vector<vector<pair<int,int>>> adj(n + 1);
 
-        for (auto &road : roads) {
+        for (auto road : roads) {
             int u = road[0];
             int v = road[1];
             int w = road[2];
