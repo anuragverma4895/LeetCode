@@ -5,7 +5,7 @@ public:
         set<string> cur;
         cur.insert("");
 
-        while (i < s.size() && s[i] != '}') {
+        while (i <= s.size() && s[i] != '}') {
             if (s[i] == ',') {
                 for (auto x : cur) res.insert(x);
                 cur.clear();
