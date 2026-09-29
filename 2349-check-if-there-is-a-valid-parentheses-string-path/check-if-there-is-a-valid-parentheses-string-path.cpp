@@ -45,7 +45,7 @@ public:
             return false;
         }
 
-        if (grid[0][0] == ')' and grid[m - 1][n - 1] == '(') {
+        if (grid[0][0] == ')' or grid[m - 1][n - 1] == '(') {
             return false;
         }
         dp.assign(m, vector<vector<int>>(n, vector<int>(m + n, -1)));
