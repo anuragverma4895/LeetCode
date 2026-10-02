@@ -1,6 +1,5 @@
 class Solution {
 public:
-
     void recur(string temp, int open, int close, int n,vector<string>&ans){
         if(open==n && close==n){
             ans.push_back(temp);
