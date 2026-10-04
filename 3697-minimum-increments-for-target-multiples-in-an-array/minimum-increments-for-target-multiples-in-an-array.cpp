@@ -22,7 +22,7 @@ public:
                             }
                         }
                     }
-                    if (lcm == 0 and lcm > 1e18) {
+                    if (lcm == 0 || lcm > 1e18) {
                         continue;
                     }
                     long long next = ((x + lcm - 1) / lcm) * lcm;
