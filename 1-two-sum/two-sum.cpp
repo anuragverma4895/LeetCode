@@ -12,23 +12,43 @@
 //         return {-1,-1};
 //     }
 // };
+
+
+// class Solution {
+// public:
+//     vector<int> twoSum(vector<int>& nums, int target) {
+//         int n=nums.size();
+//         vector<pair<int,int>>ans;
+//         for(int i=0;i<n;i++){
+//             ans.push_back({nums[i],i});
+//         }
+//         sort(ans.begin(),ans.end());
+//         int low=0,high=n-1;
+//         while(low<high){
+//             if((ans[low].first+ans[high].first)==target) return {ans[low].second,ans[high].second};
+//             else if((ans[low].first+ans[high].first)>target){
+//                 high--;
+//             }else{
+//                 low++;
+//             }
+//         }
+//         return {-1,-1};
+//     }
+// };
+
+
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int n=nums.size();
-        vector<pair<int,int>>ans;
+        unordered_map<int,int>mp;
         for(int i=0;i<n;i++){
-            ans.push_back({nums[i],i});
-        }
-        sort(ans.begin(),ans.end());
-        int low=0,high=n-1;
-        while(low<high){
-            if((ans[low].first+ans[high].first)==target) return {ans[low].second,ans[high].second};
-            else if((ans[low].first+ans[high].first)>target){
-                high--;
-            }else{
-                low++;
+            int ans=target-nums[i];
+            if(mp.find(ans)!=mp.end()){
+                return {mp[ans],i};
             }
+            mp[nums[i]]=i;
         }
         return {-1,-1};
     }
