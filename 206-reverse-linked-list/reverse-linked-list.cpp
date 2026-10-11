@@ -17,7 +17,6 @@ public:
         while(temp){
             next=temp->next;
             temp->next=prev;
-            // temp->next=prev;
             prev=temp;
             temp=next;
         }
