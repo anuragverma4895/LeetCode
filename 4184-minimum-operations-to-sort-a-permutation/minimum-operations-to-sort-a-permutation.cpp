@@ -2,7 +2,7 @@ class Solution {
 public:
     int minOperations(vector<int>& nums) {
         int n = nums.size();
-        int zero = 1;
+        int zero = 0;
 
         for (int i = 0; i < n; i++) {
             if (nums[i] == 0) {
