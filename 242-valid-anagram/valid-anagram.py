@@ -1,34 +1,17 @@
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         a=sorted(s)
+#         b=sorted(t)
+#         n=len(a)
+#         m=len(b)
+#         if m!=n:
+#             return False
+#         for i in range(m):
+#             if a[i]!=b[i]:
+#                 return False
+#         return True
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # ans1=sorted(s)
-        # ans2=sorted(t)
-        # if len(s)!=len(t):
-        #     return False
-        
-        # for i in range(len(s)):
-        #     if ans1[i]!=ans2[i]:
-        #         return False
-        # return True
-
-        # other method
-        # return Counter(s)==Counter(t)
-
-        # other method
-        if len(s)!=len(t):
-            return False
-        freq={}
-        for ch in s:
-            freq[ch]=freq.get(ch,0)+1
-        for ch in t:
-            # if ch not in freq:
-            #     return False
-            # freq[ch]-=1
-
-            # or
-
-            freq[ch]=freq.get(ch,0)-1
-
-        for values in freq.values():
-            if values>0:
-                return False
-        return True
+        a=sorted(s)
+        b=sorted(t)
+        return a==b
