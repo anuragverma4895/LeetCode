@@ -7,13 +7,22 @@ class Solution:
         #             return True
         # return 
         
+        # mp={}
+        # for i in range(len(nums)):
+        #     if nums[i] in mp:
+        #         if abs(mp[nums[i]]-i)<=k:
+        #             return True
+        #         else:
+        #             mp[nums[i]]=i
+        #     else:
+        #         mp[nums[i]]=i
+        # return False
+
+
+
         mp={}
         for i in range(len(nums)):
-            if nums[i] in mp:
-                if abs(mp[nums[i]]-i)<=k:
-                    return True
-                else:
-                    mp[nums[i]]=i
-            else:
-                mp[nums[i]]=i
+            if nums[i] in mp and abs(mp[nums[i]]-i)<=k:
+                return True
+            mp[nums[i]]=i
         return False
