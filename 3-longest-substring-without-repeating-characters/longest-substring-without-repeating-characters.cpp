@@ -60,9 +60,9 @@ public:
         int temp=0;
         for(int i=0;i<s.size();i++){
             if(mp.find(s[i])!=mp.end()){
-                temp=max(temp,mp[s[i]]+1);
+                temp=max(temp,mp[s[i]]);
             }
-            mp[s[i]]=i;
+            mp[s[i]]=i+1;
             ans=max(ans,i-temp+1);
         }
         return ans;
