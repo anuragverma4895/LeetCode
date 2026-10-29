@@ -68,26 +68,36 @@ public:
     //     return {-1,-1};
     // }
 
+    // // TC=O(nlogn) SC=O(N)
+    // vector<int> twoSum(vector<int>& nums, int target) {
+    //     vector<pair<int,int>>ans;
+    //     for(int i=0;i<nums.size();i++){
+    //         ans.push_back({nums[i],i});
+    //     }
+    //     sort(ans.begin(),ans.end());
+    //     int low=0;
+    //     int high=ans.size()-1;
+    //     while(low<high){
+    //         if(ans[low].first+ans[high].first==target){
+    //             return {ans[low].second,ans[high].second};
+    //         }
+    //         else if(ans[low].first+ans[high].first>target){
+    //             high--;
+    //         }else{
+    //             low++;
+    //         }
+    //     }
+    //     return {-1,-1};
 
-    vector<int> twoSum(vector<int>& nums, int target) {
-        vector<pair<int,int>>ans;
+    vector<int> twoSum(vector<int>& nums, int target){
+        unordered_map<int,int>mp;
         for(int i=0;i<nums.size();i++){
-            ans.push_back({nums[i],i});
-        }
-        sort(ans.begin(),ans.end());
-        int low=0;
-        int high=ans.size()-1;
-        while(low<high){
-            if(ans[low].first+ans[high].first==target){
-                return {ans[low].second,ans[high].second};
+            int temp=target-nums[i];
+            if(mp.find(temp)!=mp.end()){
+                return {mp[temp],i};
             }
-            else if(ans[low].first+ans[high].first>target){
-                high--;
-            }else{
-                low++;
-            }
+            mp[nums[i]]=i;
         }
         return {-1,-1};
-
     }
 };
