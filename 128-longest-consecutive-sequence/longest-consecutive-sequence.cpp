@@ -28,12 +28,12 @@ public:
         unordered_set<int>st(nums.begin(),nums.end());
         int ans=0;
         for(int x:st){
-            if(x!=INT_MIN && st.count(x-1)){
+            if(x!=INT_MIN && st.find(x-1)!=st.end()){
                 continue;
             }
             int temp=1;
             int curr=x;
-            while(curr!=INT_MAX && st.count(curr+1)){
+            while(curr!=INT_MAX && st.find(curr+1)!=st.end() ){
                 curr++;
                 temp++;
             }
