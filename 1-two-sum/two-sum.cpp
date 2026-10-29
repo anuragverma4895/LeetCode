@@ -56,14 +56,38 @@
 
 class Solution {
 public:
+    // //tc=O(n^2)
+    // vector<int> twoSum(vector<int>& nums, int target) {
+    //     for(int i=0;i<nums.size();i++){
+    //         for(int j=i+1;j<nums.size();j++){
+    //             if(nums[i]+nums[j]==target){
+    //                 return {i,j};
+    //             }
+    //         }
+    //     }
+    //     return {-1,-1};
+    // }
+
+
     vector<int> twoSum(vector<int>& nums, int target) {
+        vector<pair<int,int>>ans;
         for(int i=0;i<nums.size();i++){
-            for(int j=i+1;j<nums.size();j++){
-                if(nums[i]+nums[j]==target){
-                    return {i,j};
-                }
+            ans.push_back({nums[i],i});
+        }
+        sort(ans.begin(),ans.end());
+        int low=0;
+        int high=ans.size()-1;
+        while(low<high){
+            if(ans[low].first+ans[high].first==target){
+                return {ans[low].second,ans[high].second};
+            }
+            else if(ans[low].first+ans[high].first>target){
+                high--;
+            }else{
+                low++;
             }
         }
         return {-1,-1};
+
     }
 };
