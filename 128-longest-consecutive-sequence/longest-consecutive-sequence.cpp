@@ -1,22 +1,44 @@
+// class Solution {
+// public:
+//     int longestConsecutive(vector<int>& nums) {
+//         if(nums.empty()) return 0;
+//         sort(nums.begin(),nums.end());
+//         int ans=1;
+//         int temp=1;
+//         for(int i=1;i<nums.size();i++){
+//             if(nums[i-1]==nums[i]){
+//                 continue;
+//             }else if(nums[i-1]+1==nums[i]){
+//                 temp++;
+//             }
+//             else{
+//                 temp=1;
+//             }
+//             ans=max(ans,temp);
+//         }
+//         return ans;
+//     }
+// };
+
+
+
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        if(nums.empty()) return 0;
-        sort(nums.begin(),nums.end());
-        int ans=1;
-        int temp=1;
-        for(int i=1;i<nums.size();i++){
-            if(nums[i-1]==nums[i]){
+        unordered_set<int>st(nums.begin(),nums.end());
+        int ans=0;
+        for(int x:st){
+            if(x!=INT_MIN && st.count(x-1)){
                 continue;
-            }else if(nums[i-1]+1==nums[i]){
-                temp++;
             }
-            else{
-                temp=1;
+            int temp=1;
+            int curr=x;
+            while(curr!=INT_MAX && st.count(curr+1)){
+                curr++;
+                temp++;
             }
             ans=max(ans,temp);
         }
-        // ans=max(ans,temp);
         return ans;
     }
 };
