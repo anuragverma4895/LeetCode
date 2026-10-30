@@ -8,7 +8,7 @@ public:
             ans.push_back(pre);
             pre*=nums[i];
         }
-        int suff=1;
+        int suff=1; 
         for(int i=n-1;i>=0;i--){
             ans[i]*=suff;
             suff*=nums[i];
