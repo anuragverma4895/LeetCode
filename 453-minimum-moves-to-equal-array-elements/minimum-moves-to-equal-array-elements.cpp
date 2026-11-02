@@ -7,7 +7,6 @@ public:
         for (int x : nums) {
             ans += x - mini;
         }
-
         return ans;
     }
 };
