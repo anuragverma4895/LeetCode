@@ -1,25 +1,10 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # n=len(nums)
-        # for i in range(n):
-        #     for j in range(i+1,n):
-        #         if nums[i]+nums[j]==target:
-        #             return [i,j]
-        # return [-1,-1]
-
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         n=len(nums)
-        v=[]
+        mp={}
         for i in range(n):
-            v.append((nums[i],i))
-        v.sort()
-        low=0
-        high=n-1
-        while low<high:
-            sum=v[low][0]+v[high][0]
-            if target==sum:
-                return [v[low][1],v[high][1]]
-            elif sum<target:
-                low+=1
-            else:
-                high-=1
+            need=target-nums[i]
+            if need in mp:
+                return [mp[need],i]
+            mp[nums[i]]=i
         return [-1,-1]
