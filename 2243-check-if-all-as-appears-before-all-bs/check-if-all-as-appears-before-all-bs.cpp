@@ -2,10 +2,10 @@ class Solution {
 public:
     bool checkString(string s) {
         int n=s.size();
-        for(int i=1;i<n;i++){
-            if(s[i-1]=='b' && s[i]=='a'){
-                return false;
-            }
+        int cb=0;
+        for(int i=0;i<n;i++){
+            if(s[i]=='a' and cb>0) return false;
+            if(s[i]=='b') cb++;
         }
         return true;
     }
